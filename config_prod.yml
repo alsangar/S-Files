@@ -1,0 +1,33 @@
+imports:
+    - { resource: config.yml }
+
+monolog:
+    handlers:
+        main:
+            type:               fingers_crossed
+            action_level:       critical
+            handler:            buffered
+        buffered:
+            type:               buffer
+            handler:            swift
+        grouped:
+            type:               group
+            members:            [streamed, swift]
+        streamed:
+            type:               stream
+            path:               "%kernel.logs_dir%/%kernel.environment%.log"
+            level:              debug
+        swift:
+            type:               swift_mailer
+            from_email:         horror@mail.com
+            to_email:           admin@mail.com
+            subject:            "Ha ocurrido un error"
+            level:              debug
+        login:
+            type:               stream
+            path:               "%kernel.logs_dir%/auth.log"
+            level:              info
+            channels:           security
+        console:
+            type: console
+            process_psr_3_messages: false

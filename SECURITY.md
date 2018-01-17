@@ -1,7 +1,12 @@
 Fichero security.yml
 =======
 
-Existens ficheros específicos para los entornos de [producción](SECURITY_PROD.md) y [desarrollo](SECURITY_DEV.md). 
+Existens ficheros específicos para los entornos de [producción](SECURITY_PROD.md) y [desarrollo](SECURITY_DEV.md).
+
+# Tabla de contenidos
+- security.yml
+    - [Imitar usuarios](#imitar-usuarios)
+    
 
 ## Imitar usuarios
  

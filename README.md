@@ -15,8 +15,8 @@ symfony new my_project_name
 ```
     
 ## Lista de ficheros
-- [S-Files](#s-files)
-    - [.gitignore]()
+- S-Files
+    - [.gitignore](files/.gitignore)
     - [config.yml](CONFIG.md)
         - [config_dev.yml](CONFIG_DEV.md)
         - [config_prod.yml](CONFIG_PROD.md)

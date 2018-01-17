@@ -1,7 +1,19 @@
 Fichero config_prod.yml
 =======
 
-## Mejores logs con Monolog
+# Tabla de contenidos
+- config.yml
+    - [Monolog](#monolog)
+        - [Mejores email de logs](#mejores-email-de-logs)
+            - [Activar envío de emails](#activar-envío-de-emails)
+            - [Enviar registros relativos a errores 500](#enviar-registros-relativos-a-errores-500)
+            - [Enviar registros relativos a errores 400 excluyendo 404](#enviar-registros-relativos-a-errores-400-excluyendo-404)
+        - [Logs organizados](#logs-organizados)
+            - [Usar diferentes ficheros de regitro para cada canal](#usar-diferentes-ficheros-de-regitro-para-cada-canal)
+            - [Habilitar registro de autenticaciones](#habilitar-registro-de-autenticaciones)
+        - [Excluir errores 404](#excluir-errores-404)
+
+## Monolog
 
 Este comoponente genera los logs de la aplicación y es esencial para administrar la plataforma web. Symfony incluye Monolog para esta tarea.
 La configuración inicial es correcta para el entorno de desarrollo pero es insuficiente para el de producción. Con estos cambios conseguimos dos objetivos:

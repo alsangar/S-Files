@@ -3,6 +3,20 @@ Fichero config.yml
 
 Existens ficheros específicos para los entornos de [producción](CONFIG_PROD.md) y [desarrollo](CONFIG_DEV.md). 
 
+
+# Tabla de contenidos
+- config.yml
+    - [Habilitar profiler en producción](#habilitar-profiler-en-producción)
+    - [Doctrine](#doctrine)
+        - [Configurar la opción schema_filter](#configurar-la-opción-schema_filter)
+    - [Monolog](#monolog) 
+        - [Deshabilitar precision de microsegundos](#deshabilitar-precision-de-microsegundos)
+    - [Entorno de trabajo](#entorno-de-trabajo)
+        - [Abrir archivos en PHPStorm](#abrir-enlaces-de-volcado-de-variables-directamente-en-phpstorm)
+    - [Mailers](#mailers)
+        - [Mailers instantáneos y pospuestos](#mailers-instantáneos-y-pospuestos)
+        
+    
 ## Habilitar profiler en producción
 
 La manera fácil
@@ -30,7 +44,7 @@ doctrine:
 ```
 
 
-## Mejores logs con Monolog
+## Monolog
 
 ### Deshabilitar precision de microsegundos
 

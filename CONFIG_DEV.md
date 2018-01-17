@@ -1,7 +1,12 @@
 Fichero config_dev.yml
 =======
 
-## Mejores logs con Monolog
+# Tabla de contenidos
+- config.yml
+    - [Monolog](#monolog)
+        - [Oculta la información de eventos](#oculta-la-información-de-eventos-(si-quieres))
+
+## Monolog
 
 Este comoponente incluido en Symfony genera los logs de la aplicación, recurso esencial para administrar la plataforma web.
 

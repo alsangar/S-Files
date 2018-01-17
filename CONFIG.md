@@ -8,6 +8,7 @@ Existens ficheros específicos para los entornos de [producción](CONFIG_PROD.md
 - config.yml
     - [Habilitar profiler en producción](#habilitar-profiler-en-producción)
     - [Doctrine](#doctrine)
+        - [Estrategia de nombrado](#estrategia-de-nombrado)
         - [Configurar la opción schema_filter](#configurar-la-opción-schema_filter)
     - [Monolog](#monolog) 
         - [Deshabilitar precision de microsegundos](#deshabilitar-precision-de-microsegundos)
@@ -32,6 +33,64 @@ La manera correcta: [enlace 1](https://image.slidesharecdn.com/symfony-tips-and-
 
 
 ## Doctrine
+
+### Estrategia de nombrado
+
+En las entidades, definir mediante annotation el campo name usando snake_case y el nombre de variable con camelCase
+
+```
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+/**
+ * @ORM\Table(name="api_users")
+ */
+class ApiUsers
+{    
+    /**
+     * @ORM\Column(type="text", name="api_token")
+     */
+    protected $apiToken;
+    
+    /**
+    * @ORM\Column(type="datetime", name="created_at")
+    */
+    protected $createdAt;
+}
+```
+
+Se puede configurar el parámetro de esta manera:
+
+```
+doctrine:
+    dbal:
+        default_connection: default
+        # ...
+    orm:
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+```
+
+El resultado es el mapeo automático entre las propiedades de la entidad y los campos de la tabla
+
+<table style="border: 1px solid #ccc">
+<tr>
+<td>Entidad</td>
+<td>BBDD</td>
+</tr>
+<tr>
+<td>ApiUsers</td>
+<td>api_users</td>
+</tr>
+<tr>
+<td>apiToken</td>
+<td>api_token</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>created_at</td>
+</tr>
+</table>
+
 
 ### Configurar la opción schema_filter
 

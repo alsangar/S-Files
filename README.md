@@ -16,9 +16,11 @@ symfony new my_project_name
     
 ## Lista de ficheros
 - [S-Files](#s-files)
-    - [.gitignore](#composer-repositories)
-    - [config_dev.yml](#dependency-management)
-    - [config_prod.yml](#dependency-management-extras)
+    - [.gitignore]()
+    - [config.yml](CONFIG.md)
+        - [config_dev.yml](CONFIG_DEV.md)
+        - [config_prod.yml](CONFIG_PROD.md)
+    - [security.yml](SECURITY.md)
 
     
     

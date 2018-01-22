@@ -53,6 +53,7 @@ doctrine:
         default_table_options:
             charset: utf8mb4
             collate: utf8mb4_unicode_ci
+            engine: InnoDB
 
     orm:
         auto_generate_proxy_classes: '%kernel.debug%'

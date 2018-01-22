@@ -10,6 +10,7 @@ Existens ficheros específicos para los entornos de [producción](CONFIG_PROD.md
     - [Doctrine](#doctrine)
         - [Estrategia de nombrado](#estrategia-de-nombrado)
         - [Configurar la opción schema_filter](#configurar-la-opción-schema_filter)
+        - []()
     - [Monolog](#monolog) 
         - [Deshabilitar precision de microsegundos](#deshabilitar-precision-de-microsegundos)
     - [Entorno de trabajo](#entorno-de-trabajo)
@@ -101,6 +102,17 @@ doctrine:
         # ...
         schema_filter: ~^(?!legacy_)~
 ```
+
+### Configurar las opciones de tabla por defecto
+
+```
+default_table_options:
+            charset: utf8mb4
+            collate: utf8mb4_unicode_ci
+            engine: InnoDB
+```
+
+Con **utf8mb4** damos soporte a los emojis =)
 
 
 ## Monolog

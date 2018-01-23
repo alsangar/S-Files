@@ -10,10 +10,16 @@ Simplemente copia el contenido de los ficheros o sustituyelos directametne el ar
     
 Resulta conveniente crear el proyecto antes de copiar los ficheros o su contenido y así tener definida la estructura de directorios
 
+Symfony 3
+
 ```
 symfony new my_project_name
 ```
-    
+Symfony 4
+```
+composer create-project symfony/skeleton my-project
+```
+ 
 ## Lista de ficheros
 - S-Files
     - [.gitignore](files/.gitignore)

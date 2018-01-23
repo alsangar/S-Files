@@ -5,6 +5,9 @@ Fichero config_dev.yml
 - config.yml
     - [Monolog](#monolog)
         - [Oculta la información de eventos](#oculta-la-información-de-eventos-(si-quieres))
+        - [Activar formateador de logs pesonalizado](#activar-formateador-de-logs-pesonalizado)
+    - [Mailer](#mailer)
+        - [Definir una lista de emails permitidos](#definir-una-lista-de-emails-permitidos)
 
 ## Monolog
 
@@ -23,3 +26,31 @@ monolog:
             level: debug
             channels: ['!event']
 ```
+
+### Activar formateador de logs pesonalizado
+
+Activa el formateador configurado en el fichero [config.yml](CONFIG.md#formato-personalizado-en-los-logs)
+
+```
+monolog:
+    handlers:
+        main:
+            type: stream
+            path: '%kernel.logs_dir%/%kernel.environment%.log'
+            level: debug
+            formatter: app.log.formatter
+```
+
+
+## Mailer
+
+### Definir una lista de emails permitidos
+
+Las direcciones de correo que concuerden con la expresión regular serán enviados, incluso en el entorno dev.
+```
+swiftmailer:
+    delivery_address: dev@example.com
+    delivery_whitelist: 
+        - "/notifications@example.com$/" 
+        - "/^admin@*$/""
+``` 
